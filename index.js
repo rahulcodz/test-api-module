@@ -14,6 +14,8 @@ const pool = new Pool({
 
 const server = http.createServer(app)
 
+app.use(express.json())
+
 app.get("/user", async (req, res) => {
   try {
     const data = await pool.query(`SELECT * FROM employees`)
